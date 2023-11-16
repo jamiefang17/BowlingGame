@@ -45,6 +45,14 @@ rollMany(game, 16, 0);
 assertEquals(28,game.score());
 }
 
+@Test
+public void perfectGameShouldGetPerfectScore() {
+Game game = new Game();
+rollMany(game, 12, 10);
+assertEquals(300, game.score());
+}
+
+
 // other tests ...
 // helper methods ...
 }
