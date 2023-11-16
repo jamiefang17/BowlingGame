@@ -11,7 +11,7 @@ public class BowlingGameTest {
         }
     }
 
-    
+
 @Test
 public void allGuttersGameScoreShouldBeZero() {
 Game game = new Game();
@@ -24,6 +24,17 @@ Game game = new Game();
 rollMany(game, 20, 1);
 assertEquals(20, game.score());
 }
+
+@Test
+public void spareShouldGetNextRollBonus() {
+Game game = new Game();
+game.roll(5);
+game.roll(5);
+game.roll(3);
+rollMany(game,17, 0);
+assertEquals(16, game.score());
+}
+
 // other tests ...
 // helper methods ...
 }
